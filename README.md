@@ -2,7 +2,6 @@ Here I will be including codes to learn basic concepts related to data science. 
 
 * Support Vector Machine
 * Logistic and polynomial regression
-* Naive Bayes
 * Review statistical tests (two-tail \alpha, Pearson \chisq, etc)
 * Random forest
 * K-means
