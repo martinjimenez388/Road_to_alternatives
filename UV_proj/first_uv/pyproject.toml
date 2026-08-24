@@ -1,0 +1,17 @@
+[project]
+name = "first-uv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Martin", email = "martin.jimenez.388@mi.unc.edu.ar" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+first-uv = "first_uv:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
