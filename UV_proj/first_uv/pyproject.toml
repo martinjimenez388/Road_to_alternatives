@@ -7,7 +7,13 @@ authors = [
     { name = "Martin", email = "martin.jimenez.388@mi.unc.edu.ar" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastapi>=0.141.1",
+    "pydantic>=2.13.4",
+    "requests>=2.34.2",
+    "scikit-learn>=1.6.1",
+    "uvicorn[standard]>=0.52.4",
+]
 
 [project.scripts]
 first-uv = "first_uv:main"
