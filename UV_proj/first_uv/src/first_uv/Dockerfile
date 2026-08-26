@@ -12,4 +12,4 @@ COPY src/first_uv/load_model_fastapi.py src/first_uv/pipeline_v1.bin ./
 
 EXPOSE 9696
 
-ENTRYPOINT ["uv", "run", "uvicorn", "load_model_fastapi:app", "--host", "0.0.0.0", "--port", "9696"]
+ENTRYPOINT ["uv", "run", "--no-project", "uvicorn", "load_model_fastapi:app", "--host", "0.0.0.0", "--port", "9696"]
