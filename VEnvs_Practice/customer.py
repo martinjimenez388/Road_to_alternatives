@@ -13,8 +13,7 @@ app = Flask(__name__) # give an identity to your web service
  # In order to send the customer information we need to post its data.
  # Then, we define the so-callew view function that will be executed when the user sends a post request to the /predict endpoint.
 
-#@app.route('/predict', methods=['POST'])
-@app.route('/')
+@app.route('/predict', methods=['POST'])
 def predict():
   customer = request.get_json()  ## web services work best with json frame, so after the user posts its data in json format we need to access the body of json.
 
