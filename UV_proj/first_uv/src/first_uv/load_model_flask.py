@@ -1,3 +1,5 @@
+# Here we define the endpoint to call the model and get the prediction.
+# We will use Flask to create a web service that will listen to incoming requests and return the prediction.
 from flask import Flask
 from flask import request
 from flask import jsonify
@@ -11,7 +13,7 @@ app = Flask(__name__) # give an identity to your web service
 
 @app.route('/predict', methods=['POST'])  ## in order to send the customer information we need to post its data.
 def predict():
-  customer = request.get_json()  ## web services work best with json frame, So after the user post its data in json format we need to access the body of json.
+  customer = request.get_json()  ## web services work best with json frame, so after the user post its data in json format we need to access the body of json.
 
   X = dv.transform([customer])
   y_pred = model.predict_proba(X)[0, 1]
