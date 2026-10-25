@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+#from pydantic import BaseModel
+from typing import Dict, Any
 import pickle
 
 #Dump the model
@@ -11,6 +12,7 @@ with open(model_file, 'rb') as f_in:
 app = FastAPI()
 
 #Define the data type of the input variables to be fed to the model
+"""
 class Client(BaseModel):
     gender:                  str
     seniorcitizen:           int
@@ -31,17 +33,17 @@ class Client(BaseModel):
     paymentmethod:           str
     monthlycharges:          float
     totalcharges:            float
-
+"""
 
 @app.post('/predict')
-def predict(data):
-    customer = data.model_dump()#Extract the data into a dictionary
-    y_pred = pipe.predict_proba([customer])[0,1]
+def predict(data: Dict[str, Any]):
+    #customer = data.model_dump()#Use this only if you use a pydantic BaseModel
+    y_pred = pipe.predict_proba([data])[0,1]
     cond = y_pred > 0.5
 
     result = {
-        "The client will churn with a probability of": f"{y_pred*100} %",
-        "Churn": cond
+        "The client will churn with a probability of": float(y_pred),
+        "Churn": bool(cond)
     }
 
     return result
