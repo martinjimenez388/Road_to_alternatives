@@ -17,7 +17,7 @@ COPY pyproject.toml uv.lock .python-version ./
 RUN uv sync --locked --no-dev --no-install-project
 
 #Include the API script and the bin file with the model
-COPY customer_api.py LogReg_model.bin ./
+COPY src/deployment_mlzoom_wsh5/customer_api.py src/deployment_mlzoom_wsh5/LogReg_model.bin ./
 
 # Expose TCP port 9696 so it can be accessed from outside the container
 EXPOSE 9696

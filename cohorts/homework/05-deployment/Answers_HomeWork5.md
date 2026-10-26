@@ -14,3 +14,6 @@ Ans: 0.770
 
 Q5: Which Python version is declared in the Dockerfile?
 Ans: python:3.11.15-slim-bookworm
+
+Q6: Run the same request from Question 4 against the container. Report conversion_probability rounded to three decimal places.
+Ans: 0.770
